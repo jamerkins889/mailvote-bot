@@ -1,59 +1,59 @@
-/* Layout: Cyberpunk / Sci-Fi Command Center Interface */
+/* Style: Cyber-Rococo (High-Brow Fine Art Meets Cyberpunk HUD) */
 :root {
-  /* Default Dark Cyberpunk Theme Variables */
-  --paper: #05050d;
-  --card: rgba(12, 16, 32, 0.85);
-  --ink: #e0f7fc;
-  --muted: #788ca0;
-  --rule: rgba(0, 240, 255, 0.25);
+  /* Default Dark Cyber-Rococo Palette */
+  --paper: #0a0812;
+  --card: rgba(18, 14, 30, 0.88);
+  --ink: #f4efdf;
+  --muted: #a69bb8;
+  --rule: rgba(223, 177, 91, 0.3);
   --accent: #00f0ff;
-  --accent-ink: #05050d;
-  --stamp: #ff007f;
-  --you: linear-gradient(135deg, #7928ca, #ff007f);
+  --accent-ink: #0a0812;
+  --stamp: #dfb15b;
+  --you: linear-gradient(135deg, #701a75, #4c1d95, #00f0ff);
   --font-body: "Public Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: "Fira Code", "IBM Plex Mono", monospace;
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --font-heading: "Cinzel Decorative", "Playfair Display", serif;
   color-scheme: dark;
 }
 
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --paper: #f0f4f8;
-    --card: rgba(255, 255, 255, 0.9);
-    --ink: #0a1128;
-    --muted: #4a5568;
-    --rule: rgba(0, 119, 182, 0.2);
-    --accent: #0077b6;
+    --paper: #f8f5ee;
+    --card: rgba(255, 252, 245, 0.92);
+    --ink: #1c1524;
+    --muted: #665b75;
+    --rule: rgba(184, 134, 11, 0.25);
+    --accent: #6b21a8;
     --accent-ink: #ffffff;
-    --stamp: #d90429;
-    --you: linear-gradient(135deg, #0077b6, #7209b7);
+    --stamp: #b8860b;
+    --you: linear-gradient(135deg, #6b21a8, #0284c7);
     color-scheme: light;
   }
 }
 
 :root[data-theme="light"] {
-  --paper: #f0f4f8;
-  --card: rgba(255, 255, 255, 0.9);
-  --ink: #0a1128;
-  --muted: #4a5568;
-  --rule: rgba(0, 119, 182, 0.2);
-  --accent: #0077b6;
+  --paper: #f8f5ee;
+  --card: rgba(255, 252, 245, 0.92);
+  --ink: #1c1524;
+  --muted: #665b75;
+  --rule: rgba(184, 134, 11, 0.25);
+  --accent: #6b21a8;
   --accent-ink: #ffffff;
-  --stamp: #d90429;
-  --you: linear-gradient(135deg, #0077b6, #7209b7);
+  --stamp: #b8860b;
+  --you: linear-gradient(135deg, #6b21a8, #0284c7);
   color-scheme: light;
 }
 
 :root[data-theme="dark"] {
-  --paper: #05050d;
-  --card: rgba(12, 16, 32, 0.85);
-  --ink: #e0f7fc;
-  --muted: #788ca0;
-  --rule: rgba(0, 240, 255, 0.25);
+  --paper: #0a0812;
+  --card: rgba(18, 14, 30, 0.88);
+  --ink: #f4efdf;
+  --muted: #a69bb8;
+  --rule: rgba(223, 177, 91, 0.3);
   --accent: #00f0ff;
-  --accent-ink: #05050d;
-  --stamp: #ff007f;
-  --you: linear-gradient(135deg, #7928ca, #ff007f);
+  --accent-ink: #0a0812;
+  --stamp: #dfb15b;
+  --you: linear-gradient(135deg, #701a75, #4c1d95, #00f0ff);
   color-scheme: dark;
 }
 
@@ -63,23 +63,22 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 16px/1.55 var(--font-body);
+  font: 16px/1.6 var(--font-body);
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Background Cyber Grid & Ambient Glows */
+/* Gallery Wallpaper Ambient Glow */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   background: 
-    radial-gradient(circle at 20% 15%, rgba(0, 240, 255, 0.15), transparent 40%),
-    radial-gradient(circle at 80% 65%, rgba(255, 0, 127, 0.12), transparent 45%),
-    linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    radial-gradient(circle at 50% 10%, rgba(223, 177, 91, 0.12), transparent 50%),
+    radial-gradient(circle at 15% 70%, rgba(0, 240, 255, 0.08), transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(112, 26, 117, 0.15), transparent 45%),
+    linear-gradient(to bottom, rgba(10, 8, 18, 0.6), rgba(10, 8, 18, 0.95));
   pointer-events: none;
   z-index: 0;
 }
@@ -92,12 +91,12 @@ body::before {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
   position: relative;
   z-index: 1;
 }
 
-/* Sci-Fi Hero Header */
+/* Renaissance Oil Painting Hero Header with Cyber Trim */
 header {
   position: relative;
   width: 100vw;
@@ -105,31 +104,28 @@ header {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  padding-top: 54px;
+  padding-top: 56px;
   padding-bottom: 48px;
   background: 
-    linear-gradient(180deg, rgba(5, 5, 13, 0.7) 0%, rgba(5, 5, 13, 0.95) 85%, #05050d 100%),
-    linear-gradient(90deg, rgba(5, 5, 13, 0.95) 0%, rgba(5, 5, 13, 0.4) 50%, rgba(5, 5, 13, 0.95) 100%),
+    linear-gradient(180deg, rgba(10, 8, 18, 0.75) 0%, rgba(10, 8, 18, 0.92) 80%, #0a0812 100%),
+    linear-gradient(90deg, rgba(10, 8, 18, 0.95) 0%, rgba(10, 8, 18, 0.4) 50%, rgba(10, 8, 18, 0.95) 100%),
     url('hero.jpg') center/cover no-repeat;
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 82%, rgba(0,0,0,0) 100%);
   border-bottom: 1px solid var(--rule);
   margin-bottom: 8px;
+  box-shadow: inset 0 -20px 30px rgba(0, 0, 0, 0.8);
 }
 
-/* Scanline Effect Overlay */
-header::after {
+/* Gold Frame Ornament Border */
+header::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.15),
-    rgba(0, 0, 0, 0.15) 1px,
-    transparent 1px,
-    transparent 3px
-  );
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #dfb15b 0%, #00f0ff 50%, #dfb15b 100%);
 }
 
 header > * {
@@ -138,49 +134,44 @@ header > * {
   margin-right: auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
-  position: relative;
-  z-index: 2;
 }
 
-/* Neon Kicker Pill */
+/* Fine Art Exhibition Pill Header */
 header .kicker {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font: 700 11px/1 var(--font-mono);
-  letter-spacing: .12em;
+  gap: 10px;
+  font: 600 11px/1 var(--font-mono);
+  letter-spacing: .15em;
   text-transform: uppercase;
-  color: #ff007f;
-  border: 1px solid #ff007f;
-  background: rgba(5, 5, 13, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  padding: 6px 14px;
+  color: #dfb15b;
+  border: 1px solid rgba(223, 177, 91, 0.5);
+  background: rgba(10, 8, 18, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 6px 16px;
   border-radius: 999px;
   margin: 0 0 16px;
-  box-shadow: 0 0 12px rgba(255, 0, 127, 0.4);
+  box-shadow: 0 0 15px rgba(223, 177, 91, 0.2), 0 0 8px rgba(0, 240, 255, 0.2);
 }
 
 header .kicker::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #ff007f;
-  box-shadow: 0 0 10px #ff007f;
+  content: "✦";
+  font-size: 10px;
+  color: #00f0ff;
+  text-shadow: 0 0 8px #00f0ff;
 }
 
 header h1 {
   font-family: var(--font-heading);
-  font-size: clamp(34px, 6vw, 62px);
-  line-height: 1.05;
-  margin: 0 0 12px;
+  font-size: clamp(32px, 5.5vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 14px;
   text-wrap: balance;
   font-weight: 700;
-  color: #ffffff;
-  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5), 0 2px 4px rgba(0,0,0,0.8);
-  letter-spacing: -0.02em;
+  color: #fff8eb;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 0 15px rgba(223, 177, 91, 0.3);
 }
 
 header p {
@@ -188,10 +179,11 @@ header p {
   color: var(--muted);
   max-width: 60ch;
   font-size: 16px;
-  line-height: 1.6;
+  font-style: italic;
+  font-family: "Playfair Display", Georgia, serif;
 }
 
-/* Example Question Chips */
+/* Cameo Pill Chips */
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -199,27 +191,29 @@ header p {
 }
 
 .chips button {
-  font: 600 13px var(--font-mono);
+  font: inherit;
+  font-size: 13px;
+  font-family: var(--font-mono);
   color: var(--ink);
   background: var(--card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--rule);
   border-radius: 999px;
-  padding: 8px 16px;
+  padding: 8px 18px;
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .chips button:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 0 18px rgba(0, 240, 255, 0.4);
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.35), inset 0 0 10px rgba(223, 177, 91, 0.15);
   transform: translateY(-2px);
 }
 
-/* Conversation Log */
+/* Chat Log & Dialogue Stream */
 .log {
   display: flex;
   flex-direction: column;
@@ -236,29 +230,27 @@ header p {
   align-self: flex-end;
   background: var(--you);
   color: #ffffff;
-  padding: 12px 18px;
-  border-radius: 16px 16px 2px 16px;
+  padding: 14px 20px;
+  border-radius: 18px 18px 2px 18px;
   max-width: 85%;
-  box-shadow: 0 4px 20px rgba(255, 0, 127, 0.35);
-  font-weight: 400;
+  box-shadow: 0 6px 25px rgba(112, 26, 117, 0.4), 0 0 12px rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .msg.bot {
   position: relative;
-  padding-left: 22px;
-  border-left: 2px solid var(--accent);
+  padding-left: 24px;
+  border-left: 2px solid var(--stamp);
 }
 
 .msg.bot::before {
-  content: "";
+  content: "♦";
   position: absolute;
-  left: -5px;
-  top: 8px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00ff66;
-  box-shadow: 0 0 10px #00ff66, 0 0 20px #00ff66;
+  left: -7px;
+  top: 6px;
+  font-size: 12px;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
 }
 
 .msg.bot p {
@@ -266,28 +258,22 @@ header p {
   max-width: 65ch;
 }
 
-/* Holographic State Cards */
+/* Ornate Sci-Fi Museum Display Card */
 .state-card {
   background: var(--card);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--rule);
   border-radius: 16px;
-  padding: 22px 24px;
+  padding: 24px 26px;
   display: grid;
   gap: 16px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 240, 255, 0.05);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), inset 0 0 25px rgba(223, 177, 91, 0.05);
 }
 
-.state-card:hover {
-  border-color: rgba(0, 240, 255, 0.6);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 240, 255, 0.2);
-}
-
-/* Sci-Fi Gradient Header Edge */
+/* Dual Top Filigree Bar */
 .state-card::before {
   content: "";
   position: absolute;
@@ -295,7 +281,22 @@ header p {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #00f0ff, #7928ca, #ff007f);
+  background: linear-gradient(90deg, #dfb15b, #00f0ff, #701a75, #dfb15b);
+}
+
+/* Engraved Background Flourish Overlay */
+.state-card::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 180px;
+  height: 180px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none'%3E%3Ccircle cx='50' cy='50' r='45' stroke='%23dfb15b' stroke-width='0.5' stroke-dasharray='2 2' stroke-opacity='0.25'/%3E%3Ccircle cx='50' cy='50' r='35' stroke='%2300f0ff' stroke-width='0.5' stroke-opacity='0.2'/%3E%3Cpolygon points='50,15 85,85 15,85' stroke='%23dfb15b' stroke-width='0.5' stroke-opacity='0.15'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  opacity: 0.6;
 }
 
 .state-card h2 {
@@ -303,9 +304,9 @@ header p {
   font-family: var(--font-heading);
   font-size: 26px;
   padding-right: 100px;
-  color: #ffffff;
+  color: #fff8eb;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 
 .state-card dl {
@@ -315,17 +316,17 @@ header p {
 }
 
 .state-card dt {
-  font: 700 11px/1.2 var(--font-mono);
-  letter-spacing: .12em;
+  font: 600 11px/1.2 var(--font-mono);
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: #00f0ff;
   margin-bottom: 2px;
 }
 
 .state-card dd {
   margin: 0;
   padding-bottom: 12px;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.12);
+  border-bottom: 1px solid rgba(223, 177, 91, 0.15);
 }
 
 .state-card dd:last-of-type {
@@ -345,20 +346,20 @@ header p {
 }
 
 .state-card a {
-  color: #00f0ff;
+  color: #dfb15b;
   text-decoration: none;
-  border-bottom: 1px dashed #00f0ff;
+  border-bottom: 1px solid #dfb15b;
   overflow-wrap: anywhere;
   transition: all 0.2s;
 }
 
 .state-card a:hover {
-  color: #ff007f;
-  border-bottom-color: #ff007f;
-  text-shadow: 0 0 8px rgba(255, 0, 127, 0.6);
+  color: #00f0ff;
+  border-bottom-color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
 }
 
-/* Futuristic Postmark Badge */
+/* Gilded Wax/Accession Postmark Seal */
 .postmark {
   position: absolute;
   top: 18px;
@@ -371,14 +372,14 @@ header p {
   display: grid;
   place-content: center;
   text-align: center;
-  transform: rotate(-6deg);
-  font: 700 9px/1.2 var(--font-mono);
+  transform: rotate(-7deg);
+  font: 600 9px/1.2 var(--font-mono);
   letter-spacing: .08em;
   text-transform: uppercase;
   opacity: .95;
-  box-shadow: inset 0 0 0 2px var(--stamp), 0 0 16px rgba(255, 0, 127, 0.3);
-  background: rgba(5, 5, 13, 0.7);
-  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 0 2px var(--stamp), 0 0 15px rgba(223, 177, 91, 0.25);
+  background: rgba(10, 8, 18, 0.85);
+  backdrop-filter: blur(8px);
 }
 
 .postmark b {
@@ -386,19 +387,19 @@ header p {
   font-size: 11px;
 }
 
-/* Sticky Input Console */
+/* Sticky Console Form */
 form.ask {
   display: flex;
   gap: 12px;
   position: sticky;
   bottom: 16px;
-  background: rgba(12, 16, 32, 0.9);
+  background: rgba(18, 14, 30, 0.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   padding: 12px;
   border-radius: 16px;
   border: 1px solid var(--rule);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 240, 255, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(223, 177, 91, 0.15);
   z-index: 10;
 }
 
@@ -411,42 +412,42 @@ form.ask input {
   flex: 1;
   min-width: 0;
   font: 15px var(--font-body);
-  padding: 12px 18px;
+  padding: 14px 20px;
   color: var(--ink);
-  background: rgba(5, 5, 13, 0.7);
+  background: rgba(10, 8, 18, 0.7);
   border: 1px solid var(--rule);
-  border-radius: 10px;
+  border-radius: 12px;
   outline: none;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 form.ask input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  border-color: #00f0ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.35), inset 0 0 10px rgba(223, 177, 91, 0.1);
 }
 
 form.ask button {
-  font: 700 14px var(--font-mono);
-  letter-spacing: 0.05em;
+  font: 600 13px var(--font-mono);
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0 26px;
-  border: 0;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #00f0ff, #7928ca);
+  border: 1px solid var(--stamp);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #dfb15b 0%, #701a75 50%, #00f0ff 100%);
   color: #ffffff;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 16px rgba(0, 240, 255, 0.35);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 18px rgba(223, 177, 91, 0.3);
 }
 
 form.ask button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(0, 240, 255, 0.6);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 240, 255, 0.5);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline: 2px solid #00f0ff;
+  outline-offset: 3px;
 }
 
 /* Footer & Status Radar Indicator */
@@ -454,7 +455,7 @@ footer {
   font-size: 13px;
   color: var(--muted);
   border-top: 1px solid var(--rule);
-  padding-top: 20px;
+  padding-top: 22px;
 }
 
 footer p {
@@ -476,8 +477,8 @@ footer p {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #00ff66;
-  box-shadow: 0 0 10px #00ff66, 0 0 20px #00ff66;
+  background-color: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
 }
 
 .status.warn {
@@ -485,11 +486,11 @@ footer p {
 }
 
 .status.warn::before {
-  background-color: #ff007f;
-  box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+  background-color: #dfb15b;
+  box-shadow: 0 0 10px #dfb15b, 0 0 20px #dfb15b;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Alignment */
 @media (max-width: 480px) {
   .postmark {
     position: static;
@@ -497,7 +498,7 @@ footer p {
     width: auto;
     height: auto;
     border-radius: 6px;
-    padding: 4px 10px;
+    padding: 4px 12px;
     justify-self: start;
     box-shadow: none;
     margin-top: 4px;
@@ -512,35 +513,35 @@ footer p {
   }
 
   header h1 {
-    font-size: 38px;
+    font-size: 34px;
   }
 }
 
-/* Animations & Motion */
+/* Animations */
 @media (prefers-reduced-motion: no-preference) {
   .msg {
-    animation: cyberSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: luxuryRise 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .msg.bot::before,
   .status::before,
   header .kicker::before {
-    animation: pulseGlow 2s infinite ease-in-out;
+    animation: ambientGlow 2.5s infinite ease-in-out;
   }
 
-  @keyframes cyberSlide {
+  @keyframes luxuryRise {
     from {
-      transform: translateY(16px) scale(0.98);
+      transform: translateY(18px);
       opacity: 0;
     }
     to {
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
       opacity: 1;
     }
   }
 
-  @keyframes pulseGlow {
+  @keyframes ambientGlow {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.3; transform: scale(0.75); }
+    50% { opacity: 0.4; transform: scale(0.85); }
   }
 }
